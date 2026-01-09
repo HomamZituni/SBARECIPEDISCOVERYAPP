@@ -1,8 +1,9 @@
 import { useParams, Link } from 'react-router-dom';
 import { useFetch } from '../hooks/useFetch';
 export function CategoryPage() {
-  const { categoryName } = useParams();
-  const { data, loading, error } = useFetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoryName}`);
+  const { category } = useParams();  
+  const { data, loading, error } = useFetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`);
+
 
 if (loading) return <div>Loading recipes...</div>;
   if (error) return <div>Error: {error}</div>;
@@ -11,7 +12,7 @@ if (loading) return <div>Loading recipes...</div>;
 
    return (
     <div>
-      <h1>{categoryName} Recipes</h1>
+      <h1>{category} Recipes</h1>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '20px' }}>
         {meals.map(meal => (
           <Link to={`/recipe/${meal.idMeal}`} key={meal.idMeal} style={{ textDecoration: 'none' }}>

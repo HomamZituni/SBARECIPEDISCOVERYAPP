@@ -3,8 +3,9 @@ import { useFetch } from '../hooks/useFetch';
 import { useFavorites } from '../contexts/FavoritesContext';
 
 export function RecipeDetailPage () {
-  const { recipeId } = useParams();
-  const { data, loading, error } = useFetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`);
+  const { id } = useParams();  
+  const { data, loading, error } = useFetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
+
 
 const { addFavorite, removeFavorite, isFavorite } = useFavorites();
 
