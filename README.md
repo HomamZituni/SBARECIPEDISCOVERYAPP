@@ -1,16 +1,34 @@
-# React + Vite
+# Recipe Discovery App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based recipe discovery application that allows users to browse, search, and save their favorite recipes using TheMealDB API.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Browse random recipes on the homepage
+- Filter recipes by category 
+- Search for recipes by name
+- View detailed recipe information including ingredients and instructions
+- Save favorite recipes 
+- Responsive design with navigation bar
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- React Router 
+- Context API 
+- Custom hooks 
+- TheMealDB API
 
-## Expanding the ESLint configuration
+## Installation and Setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Clone the repository:
+git clone https://github.com/HomamZituni/SBARECIPEDISCOVERYAPP.git
+change directories into the main folder
+cd SBARECIPEDISCOVERYAPP/recipe-discovery-app/src
+npm install
+npm run dev
+
+Reflection
+
+The most challenging art as debugging the issues with data rendering and routing. I kept getting blank pages because the route parameters did not match the component names. I had to check out I was tracing the data flow and to pay closer attention to the naming consistency. 
+One key design decision was to extract API logic into reusable useFetch hooks instead of calling fetch directly inside each component. This kept the page and component files focused on rendering and user interactions and the hook handled data fetching, loading and error states. I was also able to reuse that logic across multiple pages. Future changes will be much simpler to implement with the modularization of the hooks. 
